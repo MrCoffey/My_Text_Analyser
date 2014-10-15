@@ -10,6 +10,9 @@ end
 
 puts "#{line_count} lines"
 =end
+#puts "Please enter your file name (include its extension e.g. .doc, .txt)"
+#file = gets.chomp.to_
+
 
 #Opening file and counting lines 
 lines = File.readlines("text.txt")
