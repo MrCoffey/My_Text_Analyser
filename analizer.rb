@@ -9,7 +9,6 @@ File.open("text.txt").each do |line|
 end	 
 
 puts "#{line_count} lines"
-
 =end
 
 #Opening file and counting lines 
@@ -39,3 +38,8 @@ sentence_count = text.split(/\.|\?|!/).length
 puts "#{sentence_count} sentences"
 
 #Calculating Averages
+puts "#{sentence_count / paragraph_count} sentences per paragraph (average)"
+puts "#{word_count / sentence_count} words per sentence (average)"
+
+#omitting stop words %w shortcut to omit "" in strings
+stopwords = %w{the a by on for of are with just but and to the my I has some in}
