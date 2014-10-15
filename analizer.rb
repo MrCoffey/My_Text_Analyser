@@ -41,5 +41,13 @@ puts "#{sentence_count} sentences"
 puts "#{sentence_count / paragraph_count} sentences per paragraph (average)"
 puts "#{word_count / sentence_count} words per sentence (average)"
 
-#omitting stop words %w shortcut to omit "" in strings
+#omitting stop words %w shortcut to omit "" when use strings within an array/hash
 stopwords = %w{the a by on for of are with just but and to the my I has some in}
+
+#Summarizing texts
+sentences = text.gsub(/\s+/, ' ').strip.split(/\.|\?|!/)
+sentences_sorted = sentences.sort_by { |sentence| sentence.length }
+one_third = sentences_sorted.length / 3
+ideal_sentences = sentences_sorted.slice(one_third, one_third + 1)
+ideal_sentences = ideal_sentences.select { |sentence| sentence =~ /is|are/ }
+puts "In other words....  " + ideal_sentences.join(". ")
